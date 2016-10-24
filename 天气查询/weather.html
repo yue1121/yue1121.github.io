@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天气查询</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/weather.css">
+</head>
+<body>
+    <div >
+    <h1>天气查询</h1>
+    <p>输入城市:<input type="text" id="cityname"><a class="btn btn-success" href="javascript:void(0)" onclick="doSearch()">查询</a></p>
+    <table class="table">
+      <thead>
+        <tr>
+            <th>序号</th>
+            <th>日期</th>
+            <th>星期</th>
+            <th>风向</th>
+            <th>风力</th>
+            <th>最高温度</th>
+            <th>最低温度</th>
+            <th>天气状态</th>
+        </tr>
+        </thead>
+        <tbody class="script-table" id="listBody">
+
+        </tbody>
+      </table>
+    </div>
+    <script id="table" type="text/html">
+        {{each list}}
+          <tr>
+            <td>{{$index+1}}</td>
+            <td>{{$value.date}}</td>
+            <td>{{$value.week}}</td>
+            <td>{{$value.fengxiang}}</td>
+            <td>{{$value.fengli}}</td>
+            <td>{{$value.hightemp}}</td>
+            <td>{{$value.lowtemp}}</td>
+            <td>{{$value.type}}</td>
+          </tr>
+          {{/each}}
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/template.js"></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="js/weather.js"></script>
+</body>
+
+</html>

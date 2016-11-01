@@ -1,0 +1,13 @@
+<div class="bar bar-header bar-dark">
+    <button class="button button-icon icon ion-navicon"></button>
+    <h1 class="title">书籍信息</h1>
+</div>
+<ion-content class="has-header has-tabs">
+    <div class="list">
+        <a ng-repeat='item in data' class="item item-thumbnail-left" ng-href="{{item.link}}">
+            <img ng-src="{{item.img}}">
+            <h2>{{item.title}}</h2>
+            <p>{{item.author}}</p>
+        </a>
+    </div>
+</ion-content>
